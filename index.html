@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jaco Cost & Level Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Jaco Calculator</h1>
+    <div class="option-container">
+        <div class="section-header">Select Option</div>
+        <label class="radio-option">
+            <input type="radio" name="option" value="cost" onclick="showSection('cost')"> 
+            Cost (Diamonds to SAR)
+        </label>
+        <label class="radio-option">
+            <input type="radio" name="option" value="lvl" onclick="showSection('lvl')"> 
+            Level (From/To)
+        </label>
+        <label class="radio-option">
+            <input type="radio" name="option" value="revenue" onclick="showSection('revenue')"> 
+            Revenue (50% Donation)
+        </label>
+    </div>
+
+    <div id="cost-section" class="hidden section-container">
+        <div class="section-header">Cost Calculation</div>
+        <div class="input-row">
+            <label>Enter Diamonds:</label>
+            <input type="number" id="diamonds-input" min="0">
+        </div>
+        <button class="button-63" onclick="calculateCost()">Calculate</button>
+        <div id="cost-result" class="result"></div>
+    </div>
+
+    <div id="revenue-section" class="hidden section-container">
+        <div class="section-header">Revenue Calculation</div>
+        <div class="input-row">
+            <label>Enter Diamonds:</label>
+            <input type="number" id="revenue-input" min="0">
+        </div>
+        <button class="button-63" onclick="calculateRevenue()">Calculate</button>
+        <div id="revenue-result" class="result"></div>
+    </div>
+
+    <div id="lvl-section" class="hidden section-container">
+        <div class="section-header">Level Calculation</div>
+        <div class="input-row">
+            <label>From Level:</label>
+            <input type="number" id="level-from" min="1" value="1">
+        </div>
+        <div class="input-row">
+            <label>To Level:</label>
+            <input type="number" id="level-to" min="1" value="10">
+        </div>
+        <button class="button-63" onclick="calculateLevel()">Calculate</button>
+        <div id="level-result" class="result"></div>
+    </div>
+
+</body>
+</html>
